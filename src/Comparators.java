@@ -13,6 +13,11 @@ public class Comparators implements Comparator<Integer> {
     }
 ;
 
+//    In Java, when implementing a compare method for a comparator, the return values 1, -1, and 0 are typically used to indicate the following:
+//    If o1 should be considered greater than o2, you return 1.
+//    If o1 should be considered less than o2, you return -1.
+//    If o1 is equal to o2, you return 0.
+
 
     public static void main(String[] args) {
         Integer[] numbers = {123, 45, 67, 89, 12};
