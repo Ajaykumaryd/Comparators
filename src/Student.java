@@ -16,23 +16,31 @@ public class Student implements Comparable<Student>{
                 ", name='" + name + '\'' +
                 '}';
     }
+
+
     @Override
     public int compareTo(Student o) {
-        return 0;
+
+        if(this.age >o.age)
+			return 1;
+		else
+			return -1;
     }
+
     public static void main(String[] args) {
 
-        Comparator<Student> comparator=new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                if(o1.age>o2.age){
-                    return 1;
-                }else {
-                    return -1;
-                }
-            }
-        };
+//        Comparator<Student> comparator=new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                if(o1.age>o2.age){
+//                    return 1;
+//                }else {
+//                    return -1;
+//                }
+//            }
+//        };
 
+        Comparator<Student> com=(i,j) -> i.age > j.age?1:-1;
 
 
         ArrayList<Student>stu=new ArrayList<>();
@@ -42,7 +50,7 @@ public class Student implements Comparable<Student>{
         // Sort the numbers using the custom comparator
 //        Arrays.sort(stu,comparator);
 
-        Collections.sort(stu,comparator);
+        Collections.sort(stu,com);
         // Print the sorted numbers
         for (Student num : stu) {
             System.out.println(num);
